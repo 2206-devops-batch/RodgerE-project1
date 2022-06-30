@@ -14,7 +14,7 @@ pipeline {
                 sh 'pip install -r requirements-dev.txt'
                 
                 //run pytest
-                sh 'pytest app-test.py'
+                sh 'python3 -m pytest app-test.py'
             }
 
         }
