@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/2206-devops-batch/RodgerE-project1'
+
+                // Run venv.
+                sh "python -m venv .venv"
+                
+                //run pip install
+                sh 'pip install - requirements-dev.txt'
+                
+                //run pytest
+                sh 'pytest app-test.py'
+            }
+
+        }
+    }
+}
