@@ -16,12 +16,15 @@ pipeline {
         }
         stage('Test'){
             //run pytest
+            steps{
                 sh 'python3 -m pytest app-test.py'
+            }
         }
 
         stage('Deployment'){
-            
-            sh 'docker-compose up -d'
+            steps{
+                sh 'docker-compose up -d'
+            }
         }
     }
 }
