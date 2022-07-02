@@ -12,11 +12,16 @@ pipeline {
                 sh '. .venv/bin/activate'
                 //run pip install
                 sh 'pip install -r requirements-dev.txt'
-                
-                //run pytest
-                sh 'python3 -m pytest app-test.py'
             }
+        }
+        stage('Test'){
+            //run pytest
+                sh 'python3 -m pytest app-test.py'
+        }
 
+        stage('Deployment'){
+            
+            sh 'docker-compose up -d'
         }
     }
 }
