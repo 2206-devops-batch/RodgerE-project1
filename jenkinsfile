@@ -23,6 +23,8 @@ pipeline {
 
         stage('Deployment'){
             steps{
+                sh 'ssh -i "RevUbuntu.pem" ubuntu@ec2-3-21-37-166.us-east-2.compute.amazonaws.com'
+                sh 'git clone https://github.com/2206-devops-batch/RodgerE-project1'
                 sh 'docker-compose up -d'
             }
         }
