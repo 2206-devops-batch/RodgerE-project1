@@ -36,7 +36,7 @@ pipeline {
                     sh 'ssh -v ubuntu@ec2-3-21-37-166.us-east-2.compute.amazonaws.com'
                     // sh 'ls -a'
                     // sh 'echo Hello!'
-                    sh 'git pull'
+                    //sh 'git pull'
                     sh 'docker-compose up -d'
                 }
 
