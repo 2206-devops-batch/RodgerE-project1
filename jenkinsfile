@@ -37,8 +37,7 @@ pipeline {
                     // sh 'ls -a'
                     // sh 'echo Hello!'
                     //sh 'git pull'
-                    sh 'pwd'
-                    sh 'ls -a'
+                    sh 'docker-compose /home/ubuntu/dockerfile up -d'
                 }
 
             }
