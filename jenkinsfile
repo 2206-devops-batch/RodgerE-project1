@@ -36,8 +36,9 @@ pipeline {
                     sh 'ssh ubuntu@ec2-3-21-37-166.us-east-2.compute.amazonaws.com'
                     // sh 'ls -a'
                     // sh 'echo Hello!'
-                    //sh 'git pull'
-                    sh 'docker-compose /home/ubuntu/dockerfile up -d'
+                    sh 'git clone https://github.com/2206-devops-batch/RodgerE-project1'
+                    sh 'cd RodgerE-project1'
+                    sh 'docker-compose up -d'
                 }
 
             }
