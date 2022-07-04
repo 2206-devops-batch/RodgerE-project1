@@ -32,7 +32,7 @@ pipeline {
         stage ('Deploy') {
             steps{
                 sshagent(credentials : ['proj1ID']) {
-                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-21-37-166.us-east-2.compute.amazonaws.com uptime'
+                    //sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-21-37-166.us-east-2.compute.amazonaws.com uptime'
                     sh 'ssh -v ubuntu@ec2-3-21-37-166.us-east-2.compute.amazonaws.com'
                     sh 'echo Hello!'
                     // sh 'git pull'
