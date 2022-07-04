@@ -21,12 +21,25 @@ pipeline {
             }
         }
 
-        stage('Deployment'){
+        // stage('Deployment'){
+        //     steps{
+        //         sh 'cd RodgerE-project1'
+        //         sh 'git pull'
+        //         sh 'docker-compose up -d'
+        //     }
+        // }
+
+        stage ('Deploy') {
             steps{
+                sshagent(credentials : ['proj1ID']) {
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-18-188-58-203.us-east-2.compute.amazonaws.com uptime'
+                    sh 'ssh -v ubuntu@ec2-18-188-58-203.us-east-2.compute.amazonaws.com'
+                }
                 sh 'cd RodgerE-project1'
                 sh 'git pull'
                 sh 'docker-compose up -d'
             }
         }
+
     }
 }
