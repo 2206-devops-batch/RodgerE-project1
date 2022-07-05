@@ -31,10 +31,11 @@ pipeline {
 
         stage ('Deploy') {
             steps{
-                    sh ' cd /home/ubuntu'
-                    sh 'git clone https://github.com/2206-devops-batch/RodgerE-project1'
-                    sh 'cd RodgerE-project1'
-                    sh 'sudo docker-compose up -d'
+                    // sh ' cd /home/ubuntu/RodgerE-project1'
+                    // sh 'git pull'
+                    sh "docker system prune -af"
+                    sh "docker build -t project1 $WORKSPACE"
+                    sh "sudo docker-compose -f $WORKSPACE/docker-compose.yaml up -d"
                 }
 
             }
