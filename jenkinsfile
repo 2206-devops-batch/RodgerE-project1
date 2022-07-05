@@ -40,7 +40,7 @@ pipeline {
             }
         stage ('Discord') {
             steps{
-                    discordSend description: '', enableArtifactsList: false, footer: '', image: '', link: 'env.BUILD_URL', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: 'Project1', webhookURL: 'https://discord.com/api/webhooks/993998749078655168/H83c2vvdFvmcGggkGKejXcGJBfyZqX8SEfNuxG1KzapDwjr7c9uIUzXxokX_rJUFO8-D'
+                    discordSend description: '', enableArtifactsList: false, footer: '', image: '', link: 'env.BUILD_URL/jenkins', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: 'Project1', webhookURL: 'https://discord.com/api/webhooks/993998749078655168/H83c2vvdFvmcGggkGKejXcGJBfyZqX8SEfNuxG1KzapDwjr7c9uIUzXxokX_rJUFO8-D'
                 }
 
             }
