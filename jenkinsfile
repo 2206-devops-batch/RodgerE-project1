@@ -33,8 +33,8 @@ pipeline {
             steps{
                     // sh ' cd /home/ubuntu/RodgerE-project1'
                     // sh 'git pull'
-                    sh "docker system prune -af"
-                    sh "docker build -t project1 $WORKSPACE"
+                    sh "sudo docker system prune -af"
+                    sh "sudo docker build -t project1 $WORKSPACE"
                     sh "sudo docker-compose -f $WORKSPACE/docker-compose.yaml up -d"
                 }
 
