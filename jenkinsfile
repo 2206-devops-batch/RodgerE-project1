@@ -20,15 +20,6 @@ pipeline {
                 sh 'python3 -m pytest app-test.py'
             }
         }
-
-        // stage('Deployment'){
-        //     steps{
-        //         sh 'cd RodgerE-project1'
-        //         sh 'git pull'
-        //         sh 'docker-compose up -d'
-        //     }
-        // }
-
         stage ('Deploy') {
             steps{
                     sh "docker system prune -af"
@@ -45,5 +36,4 @@ pipeline {
 
             }
         }
-
 }
