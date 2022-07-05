@@ -31,8 +31,7 @@ pipeline {
 
         stage ('Deploy') {
             steps{
-                    // sh ' cd /home/ubuntu/RodgerE-project1'
-                    // sh 'git pull'
+                    archiveArtifacts artifacts: 'archiveArtifacts artifacts: \'./*\'', followSymlinks: false, onlyIfSuccessful: true
                     sh "docker system prune -af"
                     sh "docker build -t project1 $WORKSPACE"
                     sh "docker-compose up -d"
@@ -41,7 +40,7 @@ pipeline {
             }
         stage ('Discord') {
             steps{
-                    discordSend description: '', enableArtifactsList: true, footer: '', image: '', link: '', result: '', scmWebUrl: 'https://github.com/2206-devops-batch/RodgerE-project1', thumbnail: '', title: 'Project 1', webhookURL: 'https://discord.com/api/webhooks/993998749078655168/H83c2vvdFvmcGggkGKejXcGJBfyZqX8SEfNuxG1KzapDwjr7c9uIUzXxokX_rJUFO8-D'
+                    discordSend description: '', enableArtifactsList: true, footer: '', image: '', link: 'env.BUILD_URL', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: 'Project1', webhookURL: 'https://discord.com/api/webhooks/993998749078655168/H83c2vvdFvmcGggkGKejXcGJBfyZqX8SEfNuxG1KzapDwjr7c9uIUzXxokX_rJUFO8-D'
                 }
 
             }
