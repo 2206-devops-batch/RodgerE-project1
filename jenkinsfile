@@ -31,10 +31,10 @@ pipeline {
 
         stage ('Deploy') {
             steps{
-                    archiveArtifacts artifacts: "archiveArtifacts artifacts: '$WORKSPACE/*'", followSymlinks: false, onlyIfSuccessful: true
                     sh "docker system prune -af"
                     sh "docker build -t project1 $WORKSPACE"
                     sh "docker-compose up -d"
+                    archiveArtifacts artifacts: "archiveArtifacts artifacts: '$WORKSPACE/*'", followSymlinks: false, onlyIfSuccessful: true
                 }
 
             }
