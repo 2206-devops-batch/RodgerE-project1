@@ -41,7 +41,7 @@ pipeline {
             }
         stage ('Discord') {
             steps{
-                    discordSend description: '', enableArtifactsList: true, footer: '', image: '', link: 'env.BUILD_URL', result: '', scmWebUrl: 'git@github.com:2206-devops-batch/RodgerE-project1.git', thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discord.com/api/webhooks/993998749078655168/H83c2vvdFvmcGggkGKejXcGJBfyZqX8SEfNuxG1KzapDwjr7c9uIUzXxokX_rJUFO8-D'
+                    discordSend description: '', enableArtifactsList: true, footer: '', image: '', link: '', result: '', scmWebUrl: 'https://github.com/2206-devops-batch/RodgerE-project1', thumbnail: '', title: 'Project 1', webhookURL: 'https://discord.com/api/webhooks/993998749078655168/H83c2vvdFvmcGggkGKejXcGJBfyZqX8SEfNuxG1KzapDwjr7c9uIUzXxokX_rJUFO8-D'
                 }
 
             }
