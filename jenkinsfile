@@ -39,6 +39,12 @@ pipeline {
                 }
 
             }
+        stage ('Email') {
+            steps{
+                    emailext attachLog: true, body: '', subject: 'A build for project 1 has finished successfully!', to: 'rodger508@revature.net'
+                }
+
+            }
         }
 
 }
