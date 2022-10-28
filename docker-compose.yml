@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   project1:
-    image: project1
+    image: azure_flask_app
     build:
       context: .
       dockerfile: ./Dockerfile
